@@ -1,0 +1,12 @@
+{
+  "name": "weather-schedule",
+  "short_name": "Weather Schedule",
+  "description": "Hourly weather and schedule workspace",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f3f5f8",
+  "theme_color": "#172033",
+  "icons": [
+    {"src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}
+  ]
+}

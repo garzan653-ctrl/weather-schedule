@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172033">
+  <meta name="description" content="Hourly weather and schedule workspace">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>weather-schedule</title>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>weather-schedule</h1>
+      <p id="locationLabel">Weather + schedule workspace</p>
+    </div>
+    <div class="toolbar">
+      <select id="workspaceSelect" aria-label="Workspace"></select>
+      <button id="newWorkspaceBtn">+ Workspace</button>
+      <button id="installBtn" class="secondary hidden">Install</button>
+    </div>
+  </header>
+
+  <main class="app">
+    <section class="controls card">
+      <div class="date-controls">
+        <button id="prevDayBtn" aria-label="Previous day">←</button>
+        <input id="dateInput" type="date">
+        <button id="nextDayBtn" aria-label="Next day">→</button>
+        <button id="todayBtn" class="secondary">Today</button>
+      </div>
+      <div class="location-controls">
+        <button id="locationBtn">Use my location</button>
+        <input id="cityInput" type="text" placeholder="City, state or ZIP">
+        <button id="cityBtn" class="secondary">Set location</button>
+      </div>
+    </section>
+
+    <section class="status" id="status" aria-live="polite"></section>
+
+    <section class="schedule card">
+      <div class="schedule-header">
+        <div>TIME</div>
+        <div>WEATHER</div>
+        <div>CONTENT / DATA</div>
+      </div>
+      <div id="rows"></div>
+    </section>
+  </main>
+
+  <dialog id="workspaceDialog">
+    <form method="dialog" id="workspaceForm">
+      <h2>New workspace</h2>
+      <label>Name
+        <input id="workspaceName" required maxlength="40" placeholder="e.g. School">
+      </label>
+      <div class="dialog-actions">
+        <button value="cancel" class="secondary">Cancel</button>
+        <button value="create">Create</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
